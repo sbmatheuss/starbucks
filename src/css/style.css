@@ -13,6 +13,25 @@
   #container {
     background-image: url('../imagens/background-mobile.png');
     background-size: contain;
+    height: 400vh;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--color-neutral-8);
+    font-weight: 700;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: var(--color-primary-1);
+      position: absolute;
+      border-radius: 30px;
+    }
   }
 
   a.btn {
@@ -45,5 +64,122 @@
   }
 
 
+  .btn-outlined {
+    background-color: transparent;
+    color: var(--color-primary-1);
+    border: 2px solid var(--color-primary-1);
+
+    &:hover {
+      background-color: var(--color-primary-1);
+      color: var(--color-neutral-0);
+    }
+  }
+
+
+  #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 96px);
+    padding: 32px 4%;
+    padding-top: clamp(0px, 5vw, 32px);
+
+    .home-image {
+      width: clamp(300px, 50%, 400px);
+    }
+
+    .home-title {
+      color: var(--color-neutral-8);
+      text-align: center;
+      font-size: clamp(3rem, 5vw, 4.3rem);
+      text-transform: uppercase;
+      line-height: 1.2;
+      max-width: 700px;
+    }
+
+    span {
+      color: var(--color-primary-1);
+    }
+
+    .home-description {
+      color: var(--color-neutral-9);
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500px;
+      max-width: 600px;
+    }
+
+    .home-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+  }
   
-  
+  #trending {
+    padding: 32px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    min-height: calc(100vh - 96px);
+
+    .trending-cards{
+      .trending-card{
+        position: relative;
+
+        img {
+          width: clamp(300px, 5vw, 600px);
+        }
+
+        .trending-rate {
+          background-color: var(--color-neutral-0);
+          position: absolute;
+          bottom: 70px;
+          right: 30px;
+          padding: 5px 10px;
+          border-radius: 5px;
+
+          i {
+            color: var(--color-secondary-1);
+          }
+          
+        }
+
+        .trending-card-description {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: var(--color-neutral-8);
+
+          span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-neutral-7);
+          }
+        }
+      }
+    }
+  }
+
+  #about {
+    padding: 32px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-primary-1);
+    background-image: url(../imagens/bg-about.png);
+  }
+
+  @media (min-width: 768px) {
+    #trending {
+      .trending-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: rap;
+        gap: 24px;
+      }
+    }
+  }
